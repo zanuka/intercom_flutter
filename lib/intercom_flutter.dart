@@ -26,17 +26,18 @@ class Intercom {
     return _channel.invokeMethod('setUserHash', {'userHash': userHash});
   }
 
-  static Future<dynamic> registerIdentifiedUser({String userId, String email}) {
+  static Future<dynamic> registerIdentifiedUserWithUserId(
+      {String userId, String email}) {
     if (userId?.isNotEmpty ?? false) {
       if (email?.isNotEmpty ?? false) {
         throw ArgumentError(
             'The parameter `email` must be null if `userId` is provided.');
       }
-      return _channel.invokeMethod('registerIdentifiedUser', {
+      return _channel.invokeMethod('registerIdentifiedUserWithUserId', {
         'userId': userId,
       });
     } else if (email?.isNotEmpty ?? false) {
-      return _channel.invokeMethod('registerIdentifiedUser', {
+      return _channel.invokeMethod('registerIdentifiedUserWithUserId', {
         'email': email,
       });
     } else {

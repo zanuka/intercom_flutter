@@ -35,7 +35,7 @@ class IntercomFlutterPlugin(private val application: Application) : MethodCallHa
           result.success("User hash added")
         }
       }
-      call.method == "registerIdentifiedUser" -> {
+      call.method == "registerIdentifiedUserWithUserId" -> {
         val userId = call.argument<String>("userId")
         val email = call.argument<String>("email")
         var registration = Registration.create()
@@ -45,7 +45,7 @@ class IntercomFlutterPlugin(private val application: Application) : MethodCallHa
         if(email != null) {
           registration = registration.withEmail(email)
         }
-        Intercom.client().registerIdentifiedUser(registration)
+        Intercom.client().registerIdentifiedUserWithUserId(registration)
         result.success("User created")
       }
       call.method == "registerUnidentifiedUser" -> {

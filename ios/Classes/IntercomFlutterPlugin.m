@@ -26,7 +26,7 @@
         [Intercom setUserHash:userHash];
         result(@"User hash added");
     }
-    else if([@"registerIdentifiedUser" isEqualToString:call.method]) {
+    else if([@"registerIdentifiedUserWithUserId" isEqualToString:call.method]) {
         NSString *userId = call.arguments[@"userId"];
         NSString *email = call.arguments[@"email"];
         if(userId != (id)[NSNull null] || email != (id)[NSNull null]) {

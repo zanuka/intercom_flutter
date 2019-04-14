@@ -1,5 +1,5 @@
 ## 2.0.1
-* Added argument validation to registerIdentifiedUser (thanks @Zazo032)
+* Added argument validation to registerIdentifiedUserWithUserId (thanks @Zazo032)
 
 ## 2.0.0
 * Changed message channel name
@@ -70,4 +70,4 @@
 
 ## 0.0.1
 
-* Implemented `initialize`, `registerIdentifiedUser`, `registerUnidentifiedUser`, `logout`, `setLauncherVisibility`, `displayMessenger` on both Android and iOS
+* Implemented `initialize`, `registerIdentifiedUserWithUserId`, `registerUnidentifiedUser`, `logout`, `setLauncherVisibility`, `displayMessenger` on both Android and iOS
