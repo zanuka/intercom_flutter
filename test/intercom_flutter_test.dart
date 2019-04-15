@@ -27,24 +27,24 @@ void main() {
       });
     });
 
-    group('registerIdentifiedUserWithUserId', () {
+    group('registerIdentifiedUser', () {
       test('with userId', () {
-        Intercom.registerIdentifiedUserWithUserId(userId: 'test');
+        Intercom.registerIdentifiedUser(userId: 'test');
         expectMethodCall('registerIdentifiedUserWithUserId', arguments: {
           'userId': 'test',
         });
       });
 
       test('with email', () {
-        Intercom.registerIdentifiedUserWithUserId(email: 'test');
-        expectMethodCall('registerIdentifiedUserWithUserId', arguments: {
+        Intercom.registerIdentifiedUser(email: 'test');
+        expectMethodCall('registerIdentifiedUserWithEmail', arguments: {
           'email': 'test',
         });
       });
 
       test('with userId and email should fail', () {
         expect(
-          () => Intercom.registerIdentifiedUserWithUserId(
+          () => Intercom.registerIdentifiedUser(
                 userId: 'testId',
                 email: 'testEmail',
               ),
@@ -53,8 +53,7 @@ void main() {
       });
 
       test('without parameters', () {
-        expect(() => Intercom.registerIdentifiedUserWithUserId(),
-            throwsArgumentError);
+        expect(() => Intercom.registerIdentifiedUser(), throwsArgumentError);
       });
     });
 
